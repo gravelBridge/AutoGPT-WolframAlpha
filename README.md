@@ -12,6 +12,20 @@ An AutoGPT plugin to enable communication with WolframAlpha for solving math pro
 
 2. **WolframAlpha API Key**: Obtain a WolframAlpha API key by signing up for a free account at the [WolframAlpha Developer Portal](https://developer.wolframalpha.com/portal/signup.html) and creating an app. After creating the app, you will receive an `APP_ID`.
 
+3. **Install Plugin**: Install the plugin by running the following command:
+
+Mac / Linux / WSL
+
+```
+cd plugins && git clone https://github.com/gravelBridge/AutoGPT-WolframAlpha.git && zip -r ./AutoGPT-WolframAlpha.zip ./AutoGPT-WolframAlpha && rm -rf ./AutoGPT-WolframAlpha && cd .. && ./run.sh --install-plugin-deps
+```
+
+Windows, Powershell
+
+```
+cd plugins; git clone https://github.com/gravelBridge/AutoGPT-WolframAlpha.git; Compress-Archive -Path .\AutoGPT-WolframAlpha -DestinationPath .\AutoGPT-WolframAlpha.zip; Remove-Item -Recurse -Force .\AutoGPT-WolframAlpha; cd ..
+```
+
 ## 🔧 Configuration
 
 1. **Update the .env file**: Add the following lines to your `.env` file:
@@ -35,7 +49,6 @@ ALLOWLISTED PLUGINS
 ALLOWLISTED_PLUGINS=AutoGPTWolframAlpha
 ```
 
-
 ## 🚀 Usage
 
 After installing the package and configuring the settings, you can use the AutoGPT-WolframAlpha plugin to allow AutoGPT to solve math problems and obtain information from WolframAlpha.
@@ -43,6 +56,7 @@ After installing the package and configuring the settings, you can use the AutoG
 Example:
 
 1. **Configure Auto-GPT**: Set up Auto-GPT with the following parameters:
+
 - Name: `MathSolverGPT`
 - Role: `an ai designed to follow user instructions`
 - Goals:
@@ -50,5 +64,3 @@ Example:
   2. Goal 2: `Terminate`
 
 2. **Run Auto-GPT**: Launch Auto-GPT, which should use the WolframAlpha plugin to solve the math problem and return the result.
-
-
