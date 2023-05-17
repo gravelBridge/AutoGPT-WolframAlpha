@@ -20,6 +20,8 @@ def make_query(prompt):
 
     res = client.query(prompt)
 
+    if not res["@success"]:
+        raise Exception(f"Wolfram Alpha API request failed, detail: {res}")
     answer = next(res.results).text
 
     return answer
